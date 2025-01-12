@@ -14,6 +14,15 @@ interface TrendingCoin {
   data: JSON
 }
 
+interface CoinItem {
+  item: {
+    name: string;
+    symbol: string;
+    thumb: string;
+    price_btc: number;
+  };
+}
+
 function useFetchTrendingCoins() {
   const [trendingCoins, setTrendingCoins] = useState<TrendingCoin[]>([]);
 
@@ -23,7 +32,7 @@ function useFetchTrendingCoins() {
         const response = await axios.get(
           "https://api.coingecko.com/api/v3/search/trending"
         );
-        const coins = response.data.coins.map((coin: any) => ({
+        const coins = response.data.coins.map((coin: CoinItem) => ({
           name: coin.item.name,
           symbol: coin.item.symbol,
           thumb: coin.item.thumb,

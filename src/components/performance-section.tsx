@@ -9,8 +9,8 @@ export function PerformanceSection() {
         <div className="space-y-4">
           <div className="space-y-1">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-sm text-[#44475B] font-medium">Today's Low</div>
-              <div className="text-sm text-[#44475B] font-medium">Today's High</div>
+              <div className="text-sm text-[#44475B] font-medium">Today&apos;s Low</div>
+              <div className="text-sm text-[#44475B] font-medium">Today&apos;s High</div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-sm text-[#44475B] font-medium">46,930.22</span>
