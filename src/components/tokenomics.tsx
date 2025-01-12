@@ -22,6 +22,8 @@ export function Tokenomics() {
     height: 400,
   });
 
+  console.log(chartSize);
+
   useEffect(() => {
     const updateSize = () => {
       const width = window.innerWidth < 768 ? 350 : 400;
@@ -33,7 +35,7 @@ export function Tokenomics() {
     return () => window.removeEventListener("resize", updateSize); // Cleanup
   }, []);
 
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -41,7 +43,7 @@ export function Tokenomics() {
       canvasRef.current.width = 400; // Set desired width
       canvasRef.current.height = 400; // Set desired height
     }
-  }, [])
+  }, []);
 
   const style = {
     width: window.innerWidth < 768 ? "350px" : "400px",
@@ -105,4 +107,3 @@ export function Tokenomics() {
     </div>
   );
 }
-
