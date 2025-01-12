@@ -50,7 +50,7 @@ export function Tokenomics() {
                 cutout: "70%",
                 maintainAspectRatio: false,
                 responsive: true,
-                onResize: (chart, size) => {
+                onResize: (chart) => {
                   const canvas = chart.canvas;
                   canvas.width = 400; // Desired width
                   canvas.height = 400; // Desired height
