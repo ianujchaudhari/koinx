@@ -1,7 +1,5 @@
 "use client";
 import { Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { useFetchTrendingCoins } from "@/lib/fetchTrendingData";
 
 export function TrendingCoins() {
