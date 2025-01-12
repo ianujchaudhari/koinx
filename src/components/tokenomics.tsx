@@ -46,8 +46,8 @@ export function Tokenomics() {
   }, []);
 
   const style = {
-    width: window.innerWidth < 768 ? "350px" : "400px",
-    height: window.innerWidth < 768 ? "350px" : "400px",
+    width: window.innerWidth < 768 ? "350px" : chartSize.width,
+    height: window.innerWidth < 768 ? "350px" : chartSize.height,
   };
 
   return (
