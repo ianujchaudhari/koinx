@@ -1,7 +1,7 @@
 "use client";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -35,19 +35,9 @@ export function Tokenomics() {
     return () => window.removeEventListener("resize", updateSize); // Cleanup
   }, []);
 
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    if (canvasRef.current) {
-      // Modify the width and height attributes
-      canvasRef.current.width = 400; // Set desired width
-      canvasRef.current.height = 400; // Set desired height
-    }
-  }, []);
-
   const style = {
-    width: window.innerWidth < 768 ? "350px" : chartSize.width,
-    height: window.innerWidth < 768 ? "350px" : chartSize.height,
+    width: chartSize.width,
+    height: chartSize.height,
   };
 
   return (
