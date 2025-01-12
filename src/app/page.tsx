@@ -1,3 +1,5 @@
+'use client'
+
 import { Breadcrumb } from "@/components/breadcrumb";
 import { GetStartedCard } from "@/components/get-started-card";
 import { Header } from "@/components/header";

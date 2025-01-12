@@ -1,6 +1,8 @@
 'use client'
 import { ArrowUp } from 'lucide-react';
-import { PriceChart } from './price-chart';
+import dynamic from "next/dynamic";
+
+const PriceChart = dynamic(() => import("./price-chart"), { ssr: false });
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 

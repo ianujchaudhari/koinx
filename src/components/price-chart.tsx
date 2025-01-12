@@ -23,7 +23,7 @@ ChartJS.register(
   Filler
 )
 
-export function PriceChart() {
+export default function PriceChart() {
   const [activeTimeframe, setActiveTimeframe] = useState('24H')
   const timeframes = ['1H', '24H', '7D', '1M', '3M', '6M', '1Y', 'ALL']
 

@@ -1,7 +1,7 @@
 "use client";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -16,6 +16,22 @@ export function Tokenomics() {
     ],
     labels: ["Crowdsale investors: 80%", "Foundation: 20%"],
   };
+
+  const [chartSize, setChartSize] = useState({
+    width: 400,
+    height: 400,
+  });
+
+  useEffect(() => {
+    const updateSize = () => {
+      const width = window.innerWidth < 768 ? 350 : 400;
+      setChartSize({ width, height: width });
+    };
+
+    updateSize(); // Initial sizing
+    window.addEventListener("resize", updateSize); // Resize listener
+    return () => window.removeEventListener("resize", updateSize); // Cleanup
+  }, []);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
