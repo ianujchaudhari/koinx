@@ -19,18 +19,18 @@ export function SentimentSection() {
     {
       icon: "trending",
       title:
-        "Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.",
+        "Bitcoin Surpasses $90,000 Barrier",
       content:
-        "Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.",
+        "Bitcoin recently surged past the $90,000 resistance level, marking a significant milestone in its 2026 rally and reinforcing positive market sentiment.",
       backgroundColor: "#E8F4FD",
       iconColor: "#0082FF",
     },
     {
       icon: "news",
       title:
-        "Lorem ipsum dolor sit amet consectetur. Dui vel quis dignissim mattis enim tincidunt.",
+        "Spot Bitcoin ETFs See Major Outflows",
       content:
-        "Lorem ipsum dolor sit amet consectetur. Ac phasellus risus est faucibus metus quis. Amet sapien quam viverra adipiscing condimentum. Ac consectetur et pretium in a bibendum in. Sed vitae sit nisi viverra natoque lacinia libero enim.",
+        "US-listed spot Bitcoin ETFs experienced over $4.5 billion in net outflows in late 2025, signaling a potential temporary cooling of institutional demand.",
       backgroundColor: "#EBF9F4",
       iconColor: "#0FBA83",
     },

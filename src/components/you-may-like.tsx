@@ -2,9 +2,10 @@
 
 import { useFetchTrendingCoins } from "@/lib/fetchTrendingData";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 interface YouMayLikeProps {
-  title: string; // Accept an array of Coin objects
+  title: string;
 }
 
 export function YouMayLike({ title }: YouMayLikeProps) {
@@ -75,7 +76,9 @@ export function YouMayLike({ title }: YouMayLikeProps) {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           onScroll={checkScroll}
         >
-          {trendingCoins.map((coin) => (
+          {trendingCoins.map((coin) => {
+             const isPositive = coin.price_change_percentage_24h >= 0;
+             return (
             <div
               key={coin.name}
               className="flex-none w-[272px] h-[192px] p-4 bg-white border border-[#E8E8E8] rounded-2xl hover:shadow-[0px_8px_16px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out snap-start"
@@ -83,46 +86,34 @@ export function YouMayLike({ title }: YouMayLikeProps) {
               {/* Improved header layout with consistent spacing */}
               <div className="flex items-center gap-1 mb-1">
                 <div className="w-8 h-8 rounded-full bg-[#F7F7F7] flex items-center justify-center shrink-0">
-                  <img src={coin.thumb} alt={coin.name} className="w-5 h-5" />
+                  <Image src={coin.thumb} alt={coin.name} width={20} height={20} className="w-5 h-5" />
                 </div>
                 <span className="font-sm text-[#0F1629]">{coin.name}</span>
                 <span
                   className={`text-sm whitespace-nowrap ${
-                    coin.price_btc > 0 ? "text-[#14B079]" : "text-[#DC2626]"
+                    isPositive ? "text-[#14B079]" : "text-[#DC2626]"
                   }`}
                 >
-                  {coin.price_btc.toFixed(2)}
+                  {isPositive && '+'}{coin.price_change_percentage_24h.toFixed(2)}%
                 </span>
               </div>
 
               {/* Improved price display */}
               <div className="text-l font-semibold text-[#0F1629] mb-4">
-                {coin.price_btc.toFixed(2)}
+                {coin.price}
               </div>
 
               {/* Improved chart container with proper spacing */}
-              <div className="relative h-[96px] w-full p-4">
-                <svg
-                  viewBox="0 0 280 120"
-                  className={`w-full h-full ${
-                    coin.trend === "up" ? "text-[#14B079]" : "text-[#DC2626]"
-                  }`}
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d={
-                      coin.trend === "up"
-                        ? "M0 100L40 80L80 90L120 60L160 70L200 40L240 20L280 0"
-                        : "M0 20L40 40L80 30L120 60L160 50L200 80L240 90L280 100"
-                    }
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
+              <div className="relative h-[60px] w-full flex items-center justify-center">
+                <Image
+                    src={coin.sparkline}
+                    alt="sparkline"
+                    fill
+                    className="object-contain"
+                />
               </div>
             </div>
-          ))}
+          )})}
         </div>
 
         {/* Improved scroll button positioning and size */}

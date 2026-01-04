@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 export function GetStartedCard() {
   return (
@@ -9,9 +10,11 @@ export function GetStartedCard() {
         With our range of features that you can equip for free, KoinX allows you to be more educated and aware of your tax
         reports.
       </p>
-      <img
-        src="get-started-illustration.svg"
+      <Image
+        src="/get-started-illustration.svg"
         alt="Get Started Illustration"
+        width={128}
+        height={128}
         className="mx-auto mb-4 sm:mb-6 w-28 h-28 sm:w-32 sm:h-32 object-contain"
       />
       <Button variant="secondary" size="lg" className="w-full font-semibold text-sm">

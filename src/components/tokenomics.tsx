@@ -84,14 +84,7 @@ export function Tokenomics() {
           </div>
         </div>
         <p className="text-base text-[#3E424A] leading-7">
-          Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare
-          vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum
-          amet enim sit eget leo amet. At metus orci augue fusce eleifend lectus
-          eu fusce adipiscing. Volutpat ultrices nibh sodales massa habitasse
-          urna felis augue. Gravida aliquam fermentum augue eu. Imperdiet
-          bibendum amet aliquam donec. Eget justo dui metus odio rutrum. Vel
-          ipsum eget in at curabitur sem posuere facilisis vitae. Sed lorem sit
-          mauris id eget arcu ut. Vulputate ipsum aliquet odio nisi eu ac risus.
+          The initial token distribution was designed to ensure long-term stability and growth of the ecosystem. 80% of the supply was allocated to crowdsale investors to foster wide distribution and community ownership from day one. The remaining 20% was reserved for the Foundation to fund ongoing development, marketing, and ecosystem grants, ensuring the project remains sustainable and innovative for years to come.
         </p>
       </div>
     </div>

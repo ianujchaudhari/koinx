@@ -3,23 +3,29 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-interface TrendingCoin {
+export interface TrendingCoin {
+  id: string;
   name: string;
   symbol: string;
   thumb: string;
-  price_btc: number;
-  icon: string;
-  change: string;
-  trend: string;
-  data: JSON
+  price: string;
+  price_change_percentage_24h: number;
+  sparkline: string;
 }
 
 interface CoinItem {
   item: {
+    id: string;
     name: string;
     symbol: string;
     thumb: string;
-    price_btc: number;
+    data: {
+      price: string;
+      price_change_percentage_24h: {
+        usd: number;
+      };
+      sparkline: string;
+    };
   };
 }
 
@@ -33,10 +39,13 @@ function useFetchTrendingCoins() {
           "https://api.coingecko.com/api/v3/search/trending"
         );
         const coins = response.data.coins.map((coin: CoinItem) => ({
+          id: coin.item.id,
           name: coin.item.name,
           symbol: coin.item.symbol,
           thumb: coin.item.thumb,
-          price_btc: coin.item.price_btc,
+          price: coin.item.data.price,
+          price_change_percentage_24h: coin.item.data.price_change_percentage_24h.usd,
+          sparkline: coin.item.data.sparkline,
         }));
         setTrendingCoins(coins);
       } catch (error) {

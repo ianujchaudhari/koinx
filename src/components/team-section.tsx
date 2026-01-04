@@ -3,22 +3,22 @@ import Image from 'next/image'
 export function TeamSection() {
   const team = [
     {
-      name: "John Smith",
-      role: "Designation here",
+      name: "John Doe",
+      role: "Senior Software Engineer",
       image: "john-smith.svg",
-      bio: "Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet nec neque sed pellentesque viverra. Consectetur proin amet ut id facilisi quis consectetur. Tellus gravida adipiscing bibendum euismod morbi.",
+      bio: "John is a seasoned engineer with over 10 years of experience in distributed systems and blockchain technology. He previously led the core protocol team at a major DeFi project, contributing to the development of secure and scalable smart contracts.",
     },
     {
       name: "Elina Williams",
-      role: "Designation here",
+      role: "Chief Technology Officer",
       image: "ellena-williams.svg",
-      bio: "Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet nec neque sed pellentesque viverra. Consectetur proin amet ut id facilisi quis consectetur. Tellus gravida adipiscing bibendum euismod morbi.",
+      bio: "Elina is a cryptography expert and former researcher at a leading tech institute. She is passionate about privacy-preserving protocols and scalable blockchain architecture, driving the technical vision for the platform.",
     },
     {
-      name: "John Smith",
-      role: "Designation here",
+      name: "Alex Thompson",
+      role: "Product Manager",
       image: "john-smith-2.svg",
-      bio: "Lorem ipsum dolor sit amet consectetur. In justo rutrum sit sit fermentum ut libero hendrerit id. Tellus sit ornare netus sagittis in nunc convallis mattis maecenas. Tempus arcu leo sociis laoreet nec neque sed pellentesque viverra. Consectetur proin amet ut id facilisi quis consectetur. Tellus gravida adipiscing bibendum euismod morbi.",
+      bio: "Alex brings a wealth of experience in fintech and product strategy. He focuses on creating intuitive user experiences that bridge the gap between traditional finance and decentralized applications, making crypto accessible to everyone.",
     },
   ]
 
@@ -26,8 +26,7 @@ export function TeamSection() {
     <div className="bg-white rounded-lg border border-[#D3DFEE] p-4 sm:p-6">
       <h2 className="text-xl sm:text-2xl font-semibold text-[#0F1629] mb-4 sm:mb-5">Team</h2>
       <p className="text-sm sm:text-base text-[#3E424A] leading-6 sm:leading-7 mb-4 sm:mb-6">
-        Lorem ipsum dolor sit amet consectetur. Id consequat adipiscing arcu nibh. Eget mattis in mi integer sit egestas.
-        Proin tempor id pretium quam. Facilisis purus convallis quam augue.
+        Meet the dedicated team behind the platform. Our diverse group of experts combines deep knowledge in blockchain technology, finance, and user experience design to deliver the best crypto tracking tools.
       </p>
       <div className="space-y-4 sm:space-y-6">
         {team.map((member, index) => (

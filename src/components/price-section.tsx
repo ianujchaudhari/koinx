@@ -1,6 +1,7 @@
 'use client'
 import { ArrowUp } from 'lucide-react';
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const PriceChart = dynamic(() => import("./price-chart"), { ssr: false });
 import { useEffect, useState } from 'react';
@@ -42,7 +43,7 @@ export function PriceSection() {
       <div className="p-4 sm:p-6 border-b">
         <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4">
           <div className="flex items-center gap-2">
-            <img src="bitcoin.svg" alt="Bitcoin" className="w-6 h-6 sm:w-8 sm:h-8" />
+            <Image src="/bitcoin.svg" alt="Bitcoin" width={32} height={32} className="w-6 h-6 sm:w-8 sm:h-8" />
             <h1 className="text-lg sm:text-2xl font-semibold text-[#0B1426]">Bitcoin</h1>
             <span className="text-sm font-semibold text-[#5D667B]">BTC</span>
           </div>
